@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <section class="mb-4">
+            <div class="row wow fadeIn">
+                {% block auth %}
+                
+                {% endblock auth %}
+            </div>
+        </section>
+    </div>
+  </main>
+
+{% endblock content %}
+

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="card col-md-5 offset-4 mb-4">
+          {% for item in items %}
+            <div class="" style="align-items: center;text-align: center;">
+
+              <img src="{{ item.image.url }}" class="img-fluid" alt="" style='height:250px;width:250px;'>
+
+            </div>
+        
+            <!--Grid column-->
+            <div class="">
+
+              <div class="mb-3">
+                <a href="">
+                  <span class="badge purple mr-1">{{ item.get_category_display }}</span>
+                </a>
+              </div>
+
+              <p class="lead">
+                {% if item.discount_price %}
+                <span class="mr-1">
+                  <del>${{ item.price }}</del>
+                </span>
+                <span>${{ item.discount_price }}</span>
+                {% else %}
+                <span>${{ item.price }}</span>
+                {% endif %}
+              </p>
+
+              <p class="lead font-weight-bold">Description</p>
+
+              <p>{{ item.description }}</p>
+
+              </form>
+              <a href="{{ item.add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+              <a href="{{ item.remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+                Remove from cart
+              </a>
+            </div>
+            <hr>
+          {% endfor %}
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </div>
+  </main>
+
+{% endblock content %}
