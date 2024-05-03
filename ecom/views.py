@@ -17,7 +17,6 @@ import random
 from rest_framework import viewsets
 from django.http import HttpResponse
 from django.db.models import Q
-
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
